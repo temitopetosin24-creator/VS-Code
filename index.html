@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple HTML Project</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Simple HTML Project</h1>
+    <p>This is a minimal web page with HTML, CSS, and JavaScript.</p>
+    <label for="nameInput">Enter your name:</label>
+    <input id="nameInput" type="text" placeholder="Your name" />
+    <div class="button-group">
+      <button id="changeTextButton">Greet me</button>
+      <button id="resetButton" type="button">Reset</button>
+    </div>
+    <p id="message">Hello! Welcome to your simple project.</p>
+  </main>
+
+  <section id="welcomePage" class="page hidden">
+    <div class="welcome-card">
+      <h2 id="welcomeTitle">Welcome!</h2>
+      <p>Thanks for clicking the button. This is the next page in your simple project.</p>
+      <button id="backButton" type="button">Back</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
