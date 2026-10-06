@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DAMILOLA & FRANKLIN — Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@400;500&family=Homemade+Apple&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1230;--bg2:#141a42;--gold:#e9b873;--gold2:#c98f4b;--blue:#4f8cff;--ink:#e8e6f2;--mute:#a9a8c8;--red:#d9455f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;overflow-x:hidden}
+section{padding:64px 22px;text-align:center;position:relative}
+.alt{background:var(--bg2)}
+.eyebrow{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;font-weight:500}
+h2{font-family:'Playfair Display',serif;font-size:30px;line-height:1.2;margin-bottom:14px}
+p.sub{color:var(--mute);font-style:italic;max-width:340px;margin:0 auto 22px;line-height:1.5}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:13px 26px;border:0;cursor:pointer;text-decoration:none}
+.gold{background:var(--gold);color:#2a1a05}
+.ghost{background:transparent;color:var(--ink);border:1px solid rgba(79,140,255,.5);padding:12px 18px}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:.9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* progress */
+#bar{position:fixed;right:4px;top:0;width:3px;height:0;background:var(--blue);z-index:50;border-radius:2px;opacity:.7}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:70px;
+background:linear-gradient(180deg,rgba(13,18,48,.1) 0%,rgba(13,18,48,.55) 45%,var(--bg) 100%),var(--hero,radial-gradient(circle at 50% 25%,#5a6fd0,#2a3a8c 45%,#0d1230));
+background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero small{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:#dfe6ff}
+.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:54px;line-height:1.05;margin:10px 0}
+.hero h1 span{display:block}
+.hero h1 em{font-size:30px;font-style:italic;color:var(--gold);display:block;margin:2px 0}
+.hero .std{font-family:'Jost',sans-serif;letter-spacing:.3em;font-size:13px;color:var(--gold);margin-top:26px}
+.hero .loc{font-family:'Jost',sans-serif;letter-spacing:.25em;font-size:10px;color:var(--mute);margin:6px 0 20px}
+/* scratch */
+.scratch{position:relative;width:min(300px,86%);height:150px;margin:18px auto 12px;border-radius:6px;overflow:hidden}
+.scratch .under{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+background:rgba(79,140,255,.18);border:1px solid rgba(160,190,255,.4);backdrop-filter:blur(6px)}
+.scratch .under b{font-family:'Playfair Display',serif;font-size:22px;font-weight:500}
+.scratch .under i{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.2em;margin-top:8px;color:var(--mute);text-transform:uppercase}
+.scratch canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;transition:opacity .8s}
+.tap{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase;cursor:pointer;background:none;border:0}
+/* frames */
+.frame{width:100%;max-width:360px;margin:20px auto 0;border:4px solid var(--gold);padding:0;background:#000;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.frame .img{aspect-ratio:4/3;background:var(--g)}
+.frame.tall .img{aspect-ratio:3/4}
+.cap{max-width:340px;margin:0 auto;padding:12px;border:1px solid rgba(233,184,115,.35);background:rgba(233,184,115,.08);margin-top:-1px}
+.cap b{display:block;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.cap span{font-size:13px;font-style:italic;color:var(--mute)}
+/* gallery */
+.gal{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 22px 14px;margin:0 -22px;-webkit-overflow-scrolling:touch}
+.gal::-webkit-scrollbar{display:none}
+.card{flex:0 0 66%;scroll-snap-align:center;background:var(--bg);border:1px solid rgba(79,140,255,.25);padding:8px;border-radius:4px}
+.card .img{aspect-ratio:3/4;background:var(--g);border-radius:2px}
+.card small{display:block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.25em;color:var(--mute);text-transform:uppercase;padding:10px 0 4px}
+.credit{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+/* families */
+.fam b{display:block;font-family:'Playfair Display',serif;font-size:19px;color:var(--gold);font-weight:500}
+.fam i{display:block;font-size:14px;color:var(--mute);margin-bottom:14px}
+.and{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.3em;color:var(--red);margin:6px 0 14px}
+/* airmail */
+.mail{max-width:330px;margin:18px auto;padding:22px 20px;text-align:left;color:#3a3550;background:#f4eef6;position:relative;
+border:7px solid transparent;border-image:repeating-linear-gradient(135deg,#d9455f 0 12px,#f4eef6 12px 20px,#3d6bd6 20px 32px,#f4eef6 32px 40px) 7}
+.mail .top{font-family:'Jost',sans-serif;font-size:8.5px;letter-spacing:.2em;color:#3d6bd6;text-transform:uppercase}
+.mail .from{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin:4px 0 12px}
+.mail p{font-size:16px;line-height:1.5}
+.mail .sig{font-family:'Homemade Apple',cursive;font-size:18px;margin-top:10px;color:#2c2745}
+.mail .stamp{position:absolute;right:14px;top:14px;width:34px;height:40px;border:2px dotted #3d6bd6;background:#cfe0ff}
+/* counter */
+.count{display:flex;justify-content:center;gap:12px;margin:22px 0}
+.ring{width:68px;height:68px;border-radius:50%;border:1px solid rgba(233,184,115,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;
+background:radial-gradient(circle,rgba(79,140,255,.18),transparent 70%)}
+.ring::after{content:"";position:absolute;top:-3px;left:50%;width:6px;height:6px;border-radius:50%;background:var(--red)}
+.ring b{font-family:'Playfair Display',serif;font-size:22px;font-weight:500}
+.ring small{font-family:'Jost',sans-serif;font-size:7px;letter-spacing:.2em;color:var(--mute)}
+/* details */
+.ev{margin:26px 0}.ev .eyebrow{color:var(--red)}
+.ev h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:500}
+.ev p{font-size:14px;color:var(--mute);margin:4px 0 12px}
+.ev .t{color:var(--gold);font-family:'Jost',sans-serif;letter-spacing:.2em;font-size:12px}
+.ev .row{display:flex;gap:10px;justify-content:center;margin-top:10px}
+/* flags */
+.flags{display:flex;justify-content:center;gap:10px;margin:26px 0 12px;transform-origin:top}
+.flags div{width:62px;height:104px;clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);animation:sway 4s ease-in-out infinite}
+.flags div:nth-child(2){animation-delay:.6s}.flags div:nth-child(3){animation-delay:1.2s}
+@keyframes sway{50%{transform:rotate(2.5deg) translateY(2px)}}
+.fb{background:linear-gradient(120deg,#2f55e0,#6d8dff 40%,#2f55e0)}.fw{background:linear-gradient(120deg,#d8d4ec,#fff 40%,#c9c3e0)}.fr{background:linear-gradient(120deg,#e0334f,#ff7088 40%,#e0334f)}
+.lab{display:flex;justify-content:center;gap:10px;font-family:'Jost',sans-serif;font-size:8px;letter-spacing:.25em;color:var(--mute)}.lab span{width:62px}
+/* timeline */
+.tl{max-width:320px;margin:24px auto 0;text-align:left;border-left:1px solid rgba(79,140,255,.4);padding-left:22px}
+.tl div{position:relative;margin-bottom:22px}
+.tl div::before{content:"";position:absolute;left:-28px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px rgba(79,140,255,.25)}
+.tl .t{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold)}
+.tl b{display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:500}
+.tl i{font-size:14px;color:var(--mute)}
+/* floating */
+.fab{position:fixed;z-index:60;border-radius:50%;display:grid;place-items:center;cursor:pointer;border:1px solid var(--blue);color:var(--blue);background:rgba(13,18,48,.85)}
+#mus{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:42px;height:42px;font-size:13px}
+#up{left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:36px;height:36px;transform:translateX(-50%);background:rgba(255,255,255,.85);color:#222;border:0;font-size:16px}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<!-- HERO -->
+<header class="hero" style='--hero:url("IMG-20240518-WA0006.jpg")'>
+  <small>Together with their families</small>
+  <h1><span>Godgift</span><em>&amp;</em><span>Osemudiamen</span></h1>
+  <p class="sub" style="margin-bottom:0">invite you to the celebration of their marriage</p>
+  <div class="std">SAVE THE DATE</div>
+  <div class="loc">PORT HARCOURT · NIGERIA</div>
+  <div><a class="btn gold" href="#details">RSVP</a></div>
+</header>
+
+<!-- THE DATE -->
+<section>
+  <div class="eyebrow rv">The Date</div>
+  <div class="scratch rv">
+    <div class="under"><b>Saturday, August 15, 2026</b><i>Port Harcourt · Nigeria</i></div>
+    <canvas id="sc"></canvas>
+  </div>
+  <button class="tap" id="tapreveal">Or tap here to reveal it</button>
+</section>
+
+<!-- SPECIAL DELIVERY -->
+<section class="alt">
+  <div class="eyebrow rv">Special Delivery</div>
+  <h2 class="rv">How He Says I Love You</h2>
+  <p class="sub rv">Some men bring flowers by hand. One sends them by air. Their story, in one little animated flight.</p>
+  <div class="frame rv"><div class="img" style="--g:linear-gradient(90deg,#1d3a6e 0 38%,#f0a35e 38% 62%,#2a5aa8 62%)"></div></div>
+  <div class="cap rv"><b>The Delivery</b><span>An animated short. He flies, she smiles.</span></div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="eyebrow rv">A Love Like Ours</div>
+  <h2 class="rv">Godgift &amp; Osemudiamen</h2>
+  <div class="gal rv">
+    <div class="card"><div class="img" style="--g:linear-gradient(160deg,#c9b8d6,#4b5aa8)"></div><small>The Royal Court</small></div>
+    <div class="card"><div class="img" style="--g:linear-gradient(160deg,#6b86d8,#e8a06a)"></div><small>Her Moment</small></div>
+    <div class="card"><div class="img" style="--g:linear-gradient(160deg,#2b3f90,#9f8fd0)"></div><small>Adorned in Colour</small></div>
+    <div class="card"><div class="img" style="--g:linear-gradient(160deg,#e8c9a8,#3a4fa0)"></div><small>The Richer Look</small></div>
+  </div>
+  <div class="credit">Photographed by Yokes Studio</div>
+</section>
+
+<!-- COURT PORTRAIT -->
+<section class="alt">
+  <div class="eyebrow rv">Two Kingdoms, One Crown</div>
+  <h2 class="rv">The Court Portrait</h2>
+  <p class="sub rv">A son of Ileh-Ekpoma and a daughter of Nzemeno-Kenyase, painted the way their houses see them: royalty.</p>
+  <div class="frame tall rv"><div class="img" style="--g:radial-gradient(circle at 50% 30%,#d9a860,#4a2e18 55%,#1a1a3a)"></div></div>
+  <div class="cap rv"><b>Godgift &amp; Osemudiamen, 2026</b><span>Oil and gold leaf. Commissioned for the joining of two houses.</span></div>
+</section>
+
+<!-- FAMILIES -->
+<section class="fam">
+  <div class="eyebrow rv">The Families</div>
+  <div class="rv"><b>Mr. Felix Akhator Esene</b><i>of Ekpoma, Esan West LGA, Edo State, Nigeria</i></div>
+  <div class="and rv">AND</div>
+  <div class="rv"><b>Chief Kofi Boateng</b><i>of Nzemeno-Kenyase, Bono Region, Ghana</i></div>
+  <p class="sub rv" style="margin-top:20px">request the honour of your presence as Osemudiamen Esene and Godgift Boateng are joined in holy matrimony.<br><br>Two families, two nations, one love: Nigeria and Ghana meet at one altar, and back you richer for it.</p>
+</section>
+
+<!-- LETTERS -->
+<section class="alt">
+  <div class="eyebrow rv">Letters from the Couple</div>
+  <p class="sub rv">Sent across two nations, kept for a lifetime.</p>
+  <div class="mail rv"><div class="stamp"></div>
+    <div class="top">Par Avion · By Air Mail</div><div class="from">From Ose, to Godgift</div>
+    <p>My love, every good thing in my life grew sweeter the day you walked into it. You are my answered prayer, my calm on loud days. I will call you mine forever, and be my home.</p><div class="sig">Ose</div></div>
+  <div class="mail rv"><div class="stamp"></div>
+    <div class="top">Par Avion · By Air Mail</div><div class="from">From Godgift, to Ose</div>
+    <p>Loving you has been the surest yes of my life. You cover me, you make me laugh, and you make everywhere we are together feel like home. I will choose you again in every lifetime.</p><div class="sig">Godgift</div></div>
+</section>
+
+<!-- PALACE WALK -->
+<section>
+  <div class="eyebrow rv">The Evening Before Forever</div>
+  <div class="frame rv"><div class="img" style="--g:linear-gradient(90deg,#3a1d12,#c98f4b 50%,#3a1d12)"></div></div>
+  <div class="cap rv"><b>The Palace Walk, 2026</b><span>Oil and gold leaf. Hand in hand through the gold.</span></div>
+</section>
+
+<!-- COUNTER -->
+<section class="alt">
+  <div class="eyebrow rv" id="clabel">Happily Married For</div>
+  <div class="count rv">
+    <div class="ring"><b id="d">00</b><small>DAYS</small></div>
+    <div class="ring"><b id="h">00</b><small>HOURS</small></div>
+    <div class="ring"><b id="m">00</b><small>MINUTES</small></div>
+    <div class="ring"><b id="s">00</b><small>SECONDS</small></div>
+  </div>
+  <p class="sub">Saturday, August 15, 2026</p>
+</section>
+
+<!-- DETAILS -->
+<section id="details">
+  <div class="eyebrow rv">Where &amp; When</div>
+  <h2 class="rv">The Details</h2>
+  <div class="ev rv"><div class="eyebrow">White Wedding</div><h3>Bond 1 Apartment</h3>
+    <p>Opposite Next Time Supermarket, Sasi Abacha Road, Rumuome, Port Harcourt, Rivers State</p><div class="t">10:00 AM</div>
+    <div class="row"><a class="btn gold" target="_blank" href="https://maps.google.com/?q=Bond+1+Apartment+Rumuome+Port+Harcourt">Open Maps</a><a class="btn ghost" href="#" data-cal="White Wedding|Bond 1 Apartment, Rumuome, Port Harcourt|T090000Z|T100000Z">Add to Calendar</a></div></div>
+  <div class="ev rv"><div class="eyebrow">Reception</div><h3>GracePlace Event Center</h3>
+    <p>38 Eva Road, GRA Phase 2, Port Harcourt, Rivers State</p><div class="t">1:00 PM</div>
+    <div class="row"><a class="btn gold" target="_blank" href="https://maps.google.com/?q=GracePlace+Event+Center+Port+Harcourt">Open Maps</a><a class="btn ghost" href="#" data-cal="Reception|GracePlace Event Center, Port Harcourt|T120000Z|T170000Z">Add to Calendar</a></div></div>
+</section>
+
+<!-- COLOURS -->
+<section class="alt">
+  <div class="eyebrow rv">Colours of the Day</div>
+  <div class="flags rv"><div class="fb"></div><div class="fw"></div><div class="fr"></div></div>
+  <div class="lab"><span>BLUE</span><span>WHITE</span><span>RED</span></div>
+  <p class="sub" style="margin-top:16px">Blue, white and red: wear the colours of their day.</p>
+</section>
+
+<!-- ORDER OF THE DAY -->
+<section>
+  <div class="eyebrow rv">Order of the Day</div>
+  <div class="tl">
+    <div class="rv"><span class="t">10:00 AM</span><b>White Wedding</b><i>Bond 1 Apartment, Sasi Abacha Road, Rumuome</i></div>
+    <div class="rv"><span class="t">11:00 AM</span><b>Photographs</b><i>With both families, and one from the sky</i></div>
+    <div class="rv"><span class="t">11:45 AM</span><b>The Divine Flower</b><i>A moment of blessing</i></div>
+    <div class="rv"><span class="t">1:00 PM</span><b>Reception</b><i>GracePlace Event Center, GRA Phase 2</i></div>
+  </div>
+  <p class="credit" style="margin-top:40px">Godgift &amp; Osemudiamen · 08.15.2026</p>
+</section>
+
+<button class="fab" id="mus" aria-label="Toggle music">❚❚</button>
+<button class="fab" id="up" aria-label="Back to top">⌃</button>
+
+<script>
+// scroll reveal
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// progress bar + back to top
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const p=scrollY/(document.body.scrollHeight-innerHeight);bar.style.height=(p*60+5)+'vh';bar.style.top=(p*(100-65))+'vh'},{passive:true});
+document.getElementById('up').onclick=()=>scrollTo({top:0});
+// scratch card
+const cv=document.getElementById('sc'),cx=cv.getContext('2d');let done=false;
+function paint(){const r=cv.getBoundingClientRect(),dpr=devicePixelRatio||1;cv.width=r.width*dpr;cv.height=r.height*dpr;cx.scale(dpr,dpr);
+ const g=cx.createLinearGradient(0,0,r.width,r.height);g.addColorStop(0,'#e9b27a');g.addColorStop(.5,'#f6d3a8');g.addColorStop(1,'#c98f4b');
+ cx.fillStyle=g;cx.fillRect(0,0,r.width,r.height);
+ cx.fillStyle='rgba(60,35,10,.75)';cx.textAlign='center';cx.font='500 12px Jost,sans-serif';cx.fillText('SCRATCH TO REVEAL',r.width/2,r.height/2-4);
+ cx.font='italic 14px Cormorant Garamond,serif';cx.fillText('the wedding date',r.width/2,r.height/2+16);}
+function reveal(){if(done)return;done=true;cv.style.opacity=0;setTimeout(()=>cv.style.display='none',800)}
+function scratch(e){if(done)return;const r=cv.getBoundingClientRect();cx.globalCompositeOperation='destination-out';
+ cx.beginPath();cx.arc(e.clientX-r.left,e.clientY-r.top,22,0,7);cx.fill();}
+function check(){const d=cx.getImageData(0,0,cv.width,cv.height).data;let c=0;for(let i=3;i<d.length;i+=64)if(!d[i])c++;if(c/(d.length/64)>.4)reveal()}
+let down=false;
+cv.addEventListener('pointerdown',e=>{down=true;cv.setPointerCapture(e.pointerId);scratch(e)});
+cv.addEventListener('pointermove',e=>down&&scratch(e));
+cv.addEventListener('pointerup',()=>{down=false;check()});
+document.getElementById('tapreveal').onclick=reveal;
+document.fonts.ready.then(paint);
+// counter
+const T=new Date('2026-08-15T10:00:00+01:00');
+function tick(){let diff=Date.now()-T;const after=diff>=0;diff=Math.abs(diff)/1000;
+ document.getElementById('clabel').textContent=after?'Happily Married For':'Counting Down To Forever';
+ const v=[diff/86400,diff%86400/3600,diff%3600/60,diff%60].map(n=>String(Math.floor(n)).padStart(2,'0'));
+ ['d','h','m','s'].forEach((id,i)=>document.getElementById(id).textContent=v[i]);}
+tick();setInterval(tick,1000);
+// add to calendar (.ics download via data URI)
+document.querySelectorAll('[data-cal]').forEach(a=>a.onclick=e=>{e.preventDefault();const [t,l,s,en]=a.dataset.cal.split('|');
+ const ics=`BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${t} — Godgift & Osemudiamen\nLOCATION:${l}\nDTSTART:20260815${s}\nDTEND:20260815${en}\nEND:VEVENT\nEND:VCALENDAR`;
+ window.open('data:text/calendar;charset=utf8,'+encodeURIComponent(ics))});
+// Music toggle
+const music=new Audio('Teni-feat-Olamide-Zion-(CeeNaija.com).mp3');
+music.loop=true;
+music.volume=.35;
+let on=false;
+const mus=document.getElementById('mus');
+mus.onclick=async()=>{
+ if(on){music.pause();on=false}
+ else{
+  try{await music.play();on=true}
+  catch(error){console.error('Could not play the wedding music.',error);alert('Could not play the music. Check that the MP3 is in the same folder as this HTML file.')}
+ }
+ mus.textContent=on?'❚❚':'▶';
+};
+</script>
+</body>
+</html>
